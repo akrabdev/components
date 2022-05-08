@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/* CSS Reset ~ Credit: Josh W Comeau ~ */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --accent: #ab5cdb;
+  --light-grey: #979797;
+  --dark-purple: #1b1937;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  padding: 50px;
+}
+
+section.card {
+  background-color: var(--dark-purple);
+  display: flex;
+  flex-direction: row;
+  padding-left: 72px;
+  max-width: 1110px;
+  flex: 1;
+  gap: 50px;
+}
+.card_col:first-of-type {
+  padding-top: 72px;
+  padding-bottom: 59px;
+}
+
+.card_title {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+.card_description {
+  font-size: 15px;
+  color: var(--light-grey);
+  margin-bottom: 74px;
+}
+.accent {
+  color: var(--accent);
+}
+
+.card_stats {
+  display: flex;
+  gap: 64px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat_value {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.stat_name {
+  color: var(--light-grey);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  mix-blend-mode: multiply;
+  max-width: 500px;
+}
+.card_col:last-of-type {
+  opacity: 0.4;
+}
+ul {
+  padding: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+  section.card {
+    flex-direction: column;
+    padding: 0px;
+    text-align: center;
+  }
+  .card_col:last-of-type {
+    order: -1;
+  }
+
+  .card_stats {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .overlay {
+    width: 100%;
+    max-height: 400px;
+    max-width: unset;
+    object-fit: cover;
+  }
+  .card_col:first-of-type {
+    padding: 0px;
+    padding: 0px 32px;
+  }
+
+  .card_description {
+    margin-bottom: 40px;
+  }
+}
